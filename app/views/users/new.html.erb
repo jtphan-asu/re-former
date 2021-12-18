@@ -13,7 +13,7 @@
 </form>
 -->
 
-
+<!--
 <%= form_tag("/users", method: "post") do %>
   <%= label_tag :username, 'username:' %><br><br>
   <%= text_field_tag (:username)%><br><br>
@@ -23,3 +23,20 @@
   <%= text_field_tag :email%><br>
   <%= submit_tag("Submit") %>
 <% end %>
+-->
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, "username" %>
+  <%= form.text_field :username, placeholder: 'Username'%><br><br>
+  <%= form.label :password, "password" %>
+  <%= form.password_field:password %><br><br>
+  <%= form.label :email, "email" %>
+  <%= form.text_field :email, placeholder: 'Email' %><br><br>
+  <%= form.submit "Submit" %>
+<% end %>
+
+
+
+
+
+

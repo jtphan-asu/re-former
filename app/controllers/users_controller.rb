@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def create
-    @user = User.new(username: params[:username], password: params[:password], email: params[:email])
+    @user = User.new(user_params)
     #(username: params[:username], password: params[:password], email: params[:email])
     #(user_params)
     if @user.save
